@@ -7,6 +7,7 @@ import FormationDetail from './FormationDetail';
 import Login from './Components/Login'
 import Footer from './Footer';
 import DataConnexion from './DataConnexion';
+import Modules from './Components/Module';
 
 
 import './App.css'; 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/formations/:id" element={<FormationDetail />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/users/:role" element={<DataConnexion />} />
+            <Route path="/modules" element={<Modules/>} />
           
 
           </Routes>
