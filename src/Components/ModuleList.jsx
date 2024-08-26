@@ -20,13 +20,10 @@ function ModuleList(){
             setError('Error fetching dat', error)
          })
     }, []);
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-
-        return `${day}/${month}/${year}`;
+    
+        const extractDate = (dateString) => {
+        // Extraire uniquement la date au format YYYY-MM-DD
+        return dateString.split('T')[0];
     };
     return(
         <>
@@ -49,7 +46,7 @@ function ModuleList(){
                             {moduleList.map(module =>(
                                 <tr key={module}>
                                     <td>{module.title}</td>
-                                    <td>{formatDate(module.end_date)}</td>
+                                    <td>{extractDate(module.end_date)}</td>
                                 </tr>
                             ))}
                         </tbody>

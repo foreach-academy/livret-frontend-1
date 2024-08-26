@@ -47,8 +47,8 @@ function ModuleDetails(){
                     </thead>
 
                     <tbody>
-                        {modules.map(module, index =>(
-                    <tr key={index}>    
+                        {modules.map(module=>(
+                    <tr key={module}>    
                         <td>{module.title}</td>
                         <td>{module.evaluation_type}</td>
                         <td>{module.result}</td>
