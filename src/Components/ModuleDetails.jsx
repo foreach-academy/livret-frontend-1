@@ -1,11 +1,11 @@
 import React,{useEffect, useState} from "react";
 
-function Modules(){
+function ModuleDetails(){
     const [modules, setModules] = useState([]);
     const [error, setError] = useState([null]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:3000/Module')
+        fetch('http://127.0.0.1:3000/Module/details')
          .then(response => {
             if(!response.ok) {
                 throw new Error('There is no response');
@@ -13,11 +13,13 @@ function Modules(){
             return response.json()
          })
          .then(data => {
+            console.log('Fetched data:', data); 
             setModules(data);
          })
-         .catch(error =>{
-            setError({error:'Error of fetching', error});
-         })
+         .catch(error => {
+            setError('Error fetching data: ' + error.message);
+});
+
         
 
     },[]);
@@ -29,7 +31,7 @@ function Modules(){
             </div>
 
             {error && <p>{error}</p>}
-            {modules.length > 0 ?(
+            {Array.isArray (modules).length > 0 ?(
                 <table>
 
                     <thead>
@@ -45,16 +47,17 @@ function Modules(){
                     </thead>
 
                     <tbody>
-                        {modules.map(module =>(
-                    <>      
-                        <tr>{module.title}</tr>
-                        <tr>{module.evaluation_type}</tr>
-                        <tr>{module.result}</tr>
-                        <tr>{module.promo}</tr>
-                        <tr>{module.commentary}</tr>
-                        <tr>{new Date(module.created_at).toLocaleString()}</tr>
-                        <tr>{new Date(module.updated_at).toLocaleString}</tr>
-                    </>
+                        {modules.map(module, index =>(
+                    <tr key={index}>    
+                        <td>{module.title}</td>
+                        <td>{module.evaluation_type}</td>
+                        <td>{module.result}</td>
+                        <td>{module.promo}</td>
+                        <td>{module.commentary}</td>
+                        <td>{new Date(module.created_at).toLocaleString()}</td>
+                        <td>{new Date(module.updated_at).toLocaleString()}</td>
+                    </tr>
+
                         ))}
                     </tbody>
 
@@ -66,5 +69,5 @@ function Modules(){
     )
 };
 
-export default Modules;
+export default ModuleDetails;
 
