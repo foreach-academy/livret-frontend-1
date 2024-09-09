@@ -70,4 +70,3 @@ function ModuleDetails(){
 };
 
 export default ModuleDetails;
-

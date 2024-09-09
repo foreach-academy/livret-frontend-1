@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import HomePage from './HomePage';
-import ForEachAcademy from './ForEachAcademy';
-import FormationDetail from './FormationDetail';
-import Login from './Components/Login'
-import Footer from './Footer';
-import DataConnexion from './DataConnexion';
-import ModuleDetails from './Components/ModuleDetails';
-import ModuleList from './Components/ModuleList';
+import Navbar from './Composent/NavBar/Navbar';
+import HomePage from './Pages/HomePage';
+import ForEachAcademy from './Pages/ForEachAcademy';
+import FormationDetail from './Pages/FormationDetail';
+import Footer from './Footer/Footer';
+import DataConnexion from './Pages/DataConnexion';
+import ModuleDetails from './Composent/Module/ModuleDetails';
+import ModuleList from './Composent/Module/ModuleList';
 
 
 import './App.css'; 
