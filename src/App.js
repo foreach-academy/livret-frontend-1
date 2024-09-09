@@ -6,6 +6,7 @@ import ForEachAcademy from './Pages/ForEachAcademy';
 import FormationDetail from './Pages/FormationDetail';
 import Footer from './Footer/Footer';
 import DataConnexion from './Pages/DataConnexion';
+import Login from './Pages/Login/Login';
 
 import './App.css'; 
 
